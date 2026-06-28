@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Control Center | Client-Server Model</title>
+    <meta name="description" content="A premium WebSocket connection controller. Connect and disconnect from backend servers with standard client-server protocols using Red and Blue controls.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glows">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <main class="control-container">
+        <header class="app-header">
+            <div class="header-logo">
+                <span class="logo-icon">🔌</span>
+                <h1>Connection Control Center</h1>
+            </div>
+            <p class="subtitle">Establish and release WebSocket connections between systems instantly.</p>
+        </header>
+
+        <section class="glass-card main-card">
+            <!-- Server Configuration -->
+            <div class="config-section">
+                <label for="server-url-input">Server Address</label>
+                <div class="input-wrapper">
+                    <input type="text" id="server-url-input" value="ws://localhost:8080" placeholder="ws://[server-ip]:8080" spellcheck="false" autocomplete="off">
+                    <span class="input-glow"></span>
+                </div>
+                <p class="help-text">Enter the local IP address of your backend laptop (e.g., <code>ws://192.168.1.15:8080</code>).</p>
+            </div>
+
+            <!-- Connection Status -->
+            <div class="status-container">
+                <div class="status-label">Current Status:</div>
+                <div id="connection-status-badge" class="status-badge disconnected">
+                    <span class="status-indicator"></span>
+                    <span id="status-text">Disconnected</span>
+                </div>
+            </div>
+
+            <!-- Red & Blue Control Buttons -->
+            <div class="control-actions">
+                <button type="button" id="btn-establish-connection" class="action-btn btn-red" aria-label="Establish Connection">
+                    <span class="btn-ripple"></span>
+                    <span class="btn-content">
+                        <span class="btn-icon">🔴</span>
+                        <span class="btn-label">Establish Connection</span>
+                    </span>
+                </button>
+
+                <button type="button" id="btn-release-connection" class="action-btn btn-blue" aria-label="Release Connection">
+                    <span class="btn-content">
+                        <span class="btn-icon">🔵</span>
+                        <span class="btn-label">Release Connection</span>
+                    </span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Console logs / Activity history -->
+        <section class="glass-card console-card">
+            <div class="console-header">
+                <h2>Activity Console Log</h2>
+                <button id="btn-clear-console" class="clear-btn">Clear</button>
+            </div>
+            <div id="console-output" class="console-output" role="log">
+                <div class="log-entry system"><span class="log-time">[System]</span> Console initialized. Ready to connect.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Client-Server Model &bull; Created for Cross-Laptop Demonstration</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
