@@ -39,7 +39,8 @@ function logToConsole(message, type = 'system') {
 
 // Update UI elements based on connection state
 function updateUIState(state) {
-    // Reset classes
+    
+    // Reset classes of.
     statusBadge.className = 'status-badge';
     
     switch (state) {
